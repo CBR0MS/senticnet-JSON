@@ -54,13 +54,13 @@ if args.d:
 
     senticnet5_smaller = copy.deepcopy(senticnet)
 
-    # delete specified indeces 
+    # delete specified indices 
     print ("deleting sections: ")
     indicesToShow = copy.deepcopy(args.d)
     for i in range(len(args.d)):
         index = indicesToShow.pop(0)
         print("index: ", index, "\tvalue: ", senticVals[index])
-    print("from senticnet... ")
+    print("from senticnet to make senticnet-smaller... ")
     for word in senticnet5_smaller.values():
         indicesToDelete = copy.deepcopy(args.d)
         for i in range(len(indicesToDelete)):
