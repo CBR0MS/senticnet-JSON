@@ -9,12 +9,12 @@ To convert a senticnet python dictionary to JSON format, ensure `senticnet5.py` 
 ```
 python convert_senticnet_json.py
 ```
-
+This produces a single file with one line of minified JSON, `senticnet5.json`. 
 If you'd like to output pretty printed JSON, run:
 ```
 python convert_senticnet_json.py -p
 ```
-
+This produces the same file, but with 1,500,002 lines of JSON in a readable form.
 ### Deleting Values from Senticnet
 
 The senticnet5 python dictionary has quite a few entries for each word or phrase in the list. As of SenticNet5, each word looks like this:
@@ -47,11 +47,11 @@ You may not need all of these entries for your project, so you can delete them t
 ```
 python convert_senticnet_json.py -d 
 ```
-followed by the entries you wish to remove. For example, to remove `semantics1`, `semantics2`, and `aptitude_value`, run 
+followed by the indices of the entries from the senticnet dictionary you wish to remove. For example, to remove `semantics1`, `semantics2`, and `aptitude_value`, run 
 ```
-python convert_senticnet_json.py -d 8 9 3
+python convert_senticnet_json.py -d 8 9 3 
 ``` 
-This will yield a json file organized like: 
+This will yield a json file, `senticnet5-smaller.json`, organized like: 
 ```json
 {
     "a_little": [
@@ -73,7 +73,7 @@ To see a list of the possible entries to remove and their associated indices, ru
 python convert_senticnet_json.py --values
 ```
 
-With nothing except for `polarity_value` senticnet goes from 28,197 KB to just 4,712 KB- not exactly a small file but certainly much reduced from the 28 MB inital size. 
+With nothing except for `polarity_value`, senticnet goes from 28,197 KB to just 4,712 KB- not exactly a small file but certainly much reduced from the 28 MB inital size. 
 
 ### Help 
 See all possible commands with 
